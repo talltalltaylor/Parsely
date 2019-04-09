@@ -3,7 +3,8 @@
 "app": {
   "background": {
   // Optional 
-  "scripts": ["background.js"]
+  "scripts": ["background.js"],
+  "persistent": false
   
     }
   }, 
