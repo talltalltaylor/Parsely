@@ -3,7 +3,7 @@
 "app": {
   "background": {
   // Optional 
-  "scripts": ["background.js"],
+  "scripts": ["background.js", "popup.js"],
   "persistent": false
   
     }
@@ -12,10 +12,19 @@
   "manifest version": 1,
   "name": "Parsely",
   "version": "0.0.0",
+  "permissions": ["storage"],
   
   "default locale": "en",
   "description": "Browser Extension that parses HTML cooking pages into formatted, abridged recipes."
-  "icons": {...},
+  
+  "page action": {
+    "default_popup": "popup.html"
+    "default_icon:" {
+      "16":
+      "48":
+      "128":
+}
+  }
   
   // Action handlers for the button
   "action_handlers": ["Parse"],
