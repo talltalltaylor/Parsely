@@ -12,7 +12,7 @@
   "manifest version": 1,
   "name": "Parsely",
   "version": "0.0.0",
-  "permissions": ["storage"],
+  "permissions": ["activeTab", "storage", "declarativeContent"],
   
   "default locale": "en",
   "description": "Browser Extension that parses HTML cooking pages into formatted, abridged recipes."
