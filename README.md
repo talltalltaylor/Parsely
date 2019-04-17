@@ -7,10 +7,7 @@ In order to install Parsely, you will need to have Google Chrome or Firefox inst
 
 # Built With
 
-Dropwizard - The web framework used
-Maven - Dependency Management
-ROME - Used to generate RSS Feeds
-Contributing
+JavaScript, CSS, and HTML
 
 # Authors
 
