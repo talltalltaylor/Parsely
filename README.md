@@ -3,7 +3,7 @@ Browser Extension that parses HTML cooking pages into formatted, abridged recipe
 
 # Getting Started
 
-In order to install Parsely, you will need to have Google Chrome or Firefox installed. Parsely will be available in the Chrome Extenstion store and 
+In order to install Parsely, you will need to have Google Chrome or Firefox installed. Parsely will be available in the Chrome Extenstion store and Firefox Add-ons. 
 
 # Built With
 
