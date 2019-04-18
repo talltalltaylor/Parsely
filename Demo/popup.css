@@ -1,0 +1,23 @@
+body {
+  background-color: #73a753;
+}
+
+h1 {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+div{
+	margin: 20px 0;
+}
+
+.button {
+    border: none;
+	background-color: transparent;
+    color: black;
+    text-align: center;
+    font-size:  12px;
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+	width: 80px;
+    display: inline-block;
+}
