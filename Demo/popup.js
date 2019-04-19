@@ -1,13 +1,16 @@
-
+// Author: Taylor Robbins, April 2019
+// Script for the popup in the Parsely Chrome extension
 
 document.addEventListener('DOMContentLoaded', function() {
 	
+	// get buttons from DOM
 	var parseButton = document.getElementById('button_parse');
 	parseButton.classList.add('button');
 	var settingsButton = document.getElementById('settingsIcon');
 	settingsButton.classList.add("button")
 	var helpButton = document.getElementById('button_help');
 	helpButton.classList.add("button")
+	// make buttons
 	var colorButton = document.createElement("BUTTON");
 	var fontButton = document.createElement("BUTTON");
 	var plainButton = document.createElement("BUTTON");
@@ -48,8 +51,3 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
   
  });
-
-
-
-//need to add any popup functionality here
-//can take JS out of html and put it in here
