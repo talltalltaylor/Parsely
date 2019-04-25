@@ -1,61 +1,25 @@
 {
+  "manifest_version": 2,
 
-"app": {
-  "background": {
-  // Optional 
-  "scripts": ["background.js", "popup.js"],
-  "persistent": false
-  
-    }
-  }, 
-  
-  "manifest version": 1,
   "name": "Parsely",
-  "version": "0.0.0",
-  "permissions": ["activeTab", "storage", "declarativeContent"],
+  "description": "Browser Extension that parses HTML cooking pages into formatted, abridged recipes.",
+  "version": "1.0",
+
+  "permissions": ["activeTab", "tabs", "storage", "declarativeContent"],
   
-  "default locale": "en",
-  "description": "Browser Extension that parses HTML cooking pages into formatted, abridged recipes."
-  
-  "page action": {
-    "default_popup": "popup.html"
-    "default_icon:" {
-      "16":
-      "48":
-      "128":
-}
-  }
-  
-  // Action handlers for the button
-  "action_handlers": ["Parse"],
-  "author": ...,
-  "automation": ...,
+  "browser_action": {
+    "default_icon": "ParselySmall.png",
+    "default_popup": "popup_test.html"
   },
-  "commands": {...},
-  "current_locale": ...,
-  "event_rules": [{...}],
-  "externally_connectable": {
-    "matches": ["*://*.example.com/*"]
-  },
-  "file_handlers": {...},
-  "file_system_provider_capabilities": {
-    "configurable": true,
-    "multiple_mounts": true,
-    "source": "network"
-  },
-  "import": [{"id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}],
-  "key": "publicKey",
-  "kiosk": {
-    "always_update": ...,
-    "required_platform_version": ...
-  },
-  "sockets": {
-    "tcp": {
-      "connect": "*"
-    },
-    "udp": {
-      "send": "*"
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "css": ["popup.css"],
+      "js": ["jquery-3.4.0.js", "popup.js"]
     }
+  ]
 }
+
   
   

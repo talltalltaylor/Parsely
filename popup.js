@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var plainButton = document.createElement("BUTTON");
 	var line = document.createElement("HR");
 
+	parseButton.addEventListener('click', parse)
 	settingsButton.addEventListener('click', onSettingsClicked);
 	helpButton.addEventListener('click', onHelpClicked);
 	
@@ -45,6 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.removeChild(line);
 		settingsButton.removeEventListener('click', removeSettings);
 		settingsButton.addEventListener('click', onSettingsClicked);
+	}
+
+	function parse(){
+		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: 'parse.js'});
 	}
   
  });
