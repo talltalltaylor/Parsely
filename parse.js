@@ -1,5 +1,5 @@
 $( document ).ready(function() {
  
-    $(".site-container").hide();
- 
+    $(".entry-content").children().not(".wprm-recipe-container").toggle();
+    $(".entry-comments").toggle();
 });
