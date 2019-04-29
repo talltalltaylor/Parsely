@@ -45,5 +45,10 @@ $( document ).ready(function() {
         $(".adthrive-player-container adthrive-collapse-player").toggle();
         $("script").hide();
     }
-    
+    else if(window.location.href.indexOf("gimmesomeoven") > -1) {
+        
+        $(".wrapper").children().children().children().not(".recipe").toggle();
+        $(".adthrive-player-container adthrive-collapse-player").toggle();
+        $("script").hide();
+    }
 });
