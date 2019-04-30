@@ -7,11 +7,11 @@ In order to install Parsely, you will need to have Google Chrome or Firefox inst
 
 # Built With
 
-JavaScript, CSS, and HTML
+JavaScript, CSS, JQuery and HTML
 
 # Authors
 
-Philip Fitzgerald and Joseph Mancillas - Pop-up Window 
+Philip Fitzgerald and Joseph Mancillas - Pop-up Window and icons 
 Rebecca Geng - Manifest and README file 
-Taylor - Manifest, README file, and popup.js 
+Taylor - Manifest, README file, parse.js and popup.js 
 Christin Cooper - Design of Parsely button 
