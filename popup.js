@@ -48,11 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		settingsButton.addEventListener('click', onSettingsClicked);
 	}
 
-	function changeColorBack(){
+	function toggleBack(){
+		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: 'parse.js'});
 		document.getElementById('parsely').style.color = '#73a753';
 		document.body.style.backgroundColor = 'white';
-		settingsButton.removeEventListener('click', changeColorBack);
-		settingsButton.addEventListener('click', parse);
+		parseButton.removeEventListener('click', toggleBack);
+		parseButton.addEventListener('click', parse);
 
 	}
 
@@ -61,11 +63,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		chrome.tabs.executeScript({file: 'parse.js'});
 		document.getElementById('parsely').style.color = 'black';
 		document.body.style.backgroundColor = '#73a753';
-		settingsButton.removeEventListener('click', parse);
-		settingsButton.addEventListener('click', changeColorBack);
+		parseButton.removeEventListener('click', parse);
+		parseButton.addEventListener('click', toggleBack);
 	}
   
  });
+
 
 
 
