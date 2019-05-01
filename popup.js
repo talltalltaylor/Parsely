@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		settingsButton.addEventListener('click', onSettingsClicked);
 	}
 
-<<<<<<< HEAD
 	function toggleBack(){
 		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
 		chrome.tabs.executeScript({file: 'parse.js'});
@@ -56,13 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.style.backgroundColor = 'white';
 		parseButton.removeEventListener('click', toggleBack);
 		parseButton.addEventListener('click', parse);
-=======
-	function changeColorBack(){
-		document.getElementById('parsely').style.color = '#73a753';
-		document.body.style.backgroundColor = 'white';
-		settingsButton.removeEventListener('click', changeColorBack);
-		settingsButton.addEventListener('click', parse);
->>>>>>> a71e62649154a726fb3a1a25f819c1109b8dd30f
 
 	}
 
@@ -71,13 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		chrome.tabs.executeScript({file: 'parse.js'});
 		document.getElementById('parsely').style.color = 'black';
 		document.body.style.backgroundColor = '#73a753';
-<<<<<<< HEAD
 		parseButton.removeEventListener('click', parse);
 		parseButton.addEventListener('click', toggleBack);
-=======
-		settingsButton.removeEventListener('click', parse);
-		settingsButton.addEventListener('click', changeColorBack);
->>>>>>> a71e62649154a726fb3a1a25f819c1109b8dd30f
 	}
   
  });
