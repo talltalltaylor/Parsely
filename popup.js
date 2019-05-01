@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function onSettingsClicked(){
 		console.log('settings button worked');
+		colorButton.innerText = "Change Color";
+		colorButton.classList.add("button")
+		fontButton.innerText = "Change Font";
+		fontButton.classList.add("button")
 		plainButton.innerText = "Plain Text Mode";
 		plainButton.classList.add("button")
 		document.body.appendChild(line);
@@ -44,9 +48,21 @@ document.addEventListener('DOMContentLoaded', function() {
 		settingsButton.addEventListener('click', onSettingsClicked);
 	}
 
+	function changeColorBack(){
+		document.getElementById('parsely').style.color = '#73a753';
+		document.body.style.backgroundColor = 'white';
+		settingsButton.removeEventListener('click', changeColorBack);
+		settingsButton.addEventListener('click', parse);
+
+	}
+
 	function parse(){
 		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
 		chrome.tabs.executeScript({file: 'parse.js'});
+		document.getElementById('parsely').style.color = 'black';
+		document.body.style.backgroundColor = '#73a753';
+		settingsButton.removeEventListener('click', parse);
+		settingsButton.addEventListener('click', changeColorBack);
 	}
   
  });
