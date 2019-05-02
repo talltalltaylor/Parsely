@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		parseButton.removeEventListener('click', toggleBack);
 		parseButton.addEventListener('click', parse);
 		plainButton.removeEventListener('click', toggleBack);
-		plainButton.addEventListener('click', parse);
+		plainButton.addEventListener('click', plainText);
 	}
 
 	//Function that enables the user to parse the content of applicable web addresses
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		chrome.tabs.executeScript({file: 'plaintext.js'});
 		document.getElementById('parsely').style.color = '#282b26';
 		document.body.style.backgroundColor = '#73a753';
-		plainButton.removeEventListener('click', plaintext);
+		plainButton.removeEventListener('click', plainText);
 		plainButton.addEventListener('click', toggleBack);
 	}
 });
