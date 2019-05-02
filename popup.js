@@ -8,14 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	settingsButton.classList.add("button")
 	var helpButton = document.getElementById('button_help');
 	helpButton.classList.add("button")
-	var colorButton = document.createElement("BUTTON");
-	var fontButton = document.createElement("BUTTON");
+	//var colorButton = document.createElement("BUTTON");
+	//var fontButton = document.createElement("BUTTON");
 	var plainButton = document.createElement("BUTTON");
 	var line = document.createElement("HR");
 
 	parseButton.addEventListener('click', parse)
 	settingsButton.addEventListener('click', onSettingsClicked);
 	helpButton.addEventListener('click', onHelpClicked);
+	plainButton.addEventListener('click', plaintext)
 	
 	function onHelpClicked (){
 		console.log('help button worked');
@@ -61,6 +62,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.style.backgroundColor = '#73a753';
 		parseButton.removeEventListener('click', parse);
 		parseButton.addEventListener('click', toggleBack);
+	}
+	
+	function plaintextmode(){
+		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: 'parse.js'});
+		document.getElementById('parsely').style.color = 'black';
+		document.body.style.backgroundColor = '#73a753';
+		plainButton.removeEventListener('click', plaintext);
+		plainButton.addEventListener('click', toggleBack);
 	}
   
  });
