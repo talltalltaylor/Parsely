@@ -8,7 +8,7 @@
   "permissions": ["activeTab", "tabs", "storage", "declarativeContent"],
   
   "browser_action": {
-    "default_icon": "ParselySmall.png",
+    "default_icon": "logos/ParselySmall.png",
     "default_popup": "popup_test.html"
   },
 
