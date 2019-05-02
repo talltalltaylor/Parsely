@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	settingsButton.addEventListener('click', onSettingsClicked);
 
 	helpButton.addEventListener('click', onHelpClicked);
+	
+	plainButton.addEventListener('click', plainText); 
 
 	
 
@@ -129,22 +131,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		parseButton.addEventListener('click', toggleBack);
 
 	}
-
+	function plainText(){
+		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: 'plaintext.js'});
+		document.getElementById('parsely').style.color = 'black';
+		document.body.style.backgroundColor = '#73a753';
+		plainButton.removeEventListener('click', plaintext);
+		plainButton.addEventListener('click', toggleBack);
+	}
   
 
  });
-
-
-
-	
-//	function plaintextmode(){
-//		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
-//		chrome.tabs.executeScript({file: 'parse.js'});
-//		document.getElementById('parsely').style.color = 'black';
-//		document.body.style.backgroundColor = '#73a753';
-//		plainButton.removeEventListener('click', plaintext);
-//		plainButton.addEventListener('click', toggleBack);
-//	}
   
 
 
