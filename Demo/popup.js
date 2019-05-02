@@ -65,11 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		parseButton.addEventListener('click', toggleBack);
 	}
 		function plainText(){
-		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
-		chrome.tabs.executeScript({file: 'plaintext.js'});
-		document.getElementById('parsely').style.color = '#282b26';
-		document.body.style.backgroundColor = '#73a753';
-		plainButton.removeEventListener('click', plainText);
-		plainButton.addEventListener('click', toggleBack);
+		const plain_url = "/readmePlainText.html";
+		chrome.tabs.create({url: plain_url});
 	}
 });
