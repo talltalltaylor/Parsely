@@ -2,5 +2,22 @@ To run these files as a demo, you'll need to clone or download this folder from 
 then, once you have the files in a directory on your machine, open Google Chrome and navaigate
 to chrome://extensions. Once there, be sure to enable Developer Mode in the top right-hand corner,
 then select Load Unpacked, and select the folder/directory saved to your computer.
-At this point the icon should appear, and the menu should be operational. The main functionality
-has yet to be added. This is just a demo. 
+At this point the icon should appear, and the menu should be operational. 
+
+When you click the Parse button in the shape of our logo, any simplified recipe card found from the following sites will be presented, and all other elements will be toggled out of view:
+
+averiecooks.com
+belleofthekitchen.com
+cookingclassy.com
+damndelicious.net
+gimmesomeoven.com
+recipetineats.com
+simplyrecipes.com
+spendwithpennies.com
+tastesbetterfromscratch.com
+thestayathomechef.com
+
+To return the webpage to its original state, simply hit the Parse button again.
+
+Any feature suggestions or bugs can be reported to taylor.s.robbins@gmail.com
+
