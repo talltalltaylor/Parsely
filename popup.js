@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	parseButton.addEventListener('click', parse);
 	settingsButton.addEventListener('click', onSettingsClicked);
 	helpButton.addEventListener('click', onHelpClicked);
+	
+	plainButton.addEventListener('click', onPlainTextClicked); 
 
 	// Function that opens a new chrome tab for the readme.html to display to the user
 	function onHelpClicked (){
@@ -22,6 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		chrome.tabs.create({url: help_url});
 	}
 
+	// creating a function for plain text to open in new window 
+	function onPlainTextClicked(){
+		console.log('plainText worked');
+		const plaintext_url = "/readmePlainText.html";
+		chrome.tabs.create({url:plaintext.url});
+	}
+	
 	// Function that adds settings to the settings button. When clicked the window is expanded to display the options
 	// to users.
 	function onSettingsClicked(){
