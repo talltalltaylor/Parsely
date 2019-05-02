@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	parseButton.addEventListener('click', parse);
 	settingsButton.addEventListener('click', onSettingsClicked);
 	helpButton.addEventListener('click', onHelpClicked);
+	plainButton.addEventListener('click', plainText);
 
 	// Function that opens a new chrome tab for the readme.html to display to the user
 	function onHelpClicked (){
@@ -67,3 +68,4 @@ document.addEventListener('DOMContentLoaded', function() {
 		chrome.tabs.create({url: plain_url});
 	}
 });
+
