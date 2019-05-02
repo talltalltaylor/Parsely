@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		parseButton.removeEventListener('click', parse);
 		parseButton.addEventListener('click', toggleBack);
 	}
-		function plainText(){
+	function plainText(){
 		const plain_url = "/readmePlainText.html";
 		chrome.tabs.create({url: plain_url});
 	}
