@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.style.backgroundColor = '#ffffff';
 		parseButton.removeEventListener('click', toggleBack);
 		parseButton.addEventListener('click', parse);
-		plainButton.removeEventListener('click', toggleBack);
-		plainButton.addEventListener('click', plainText);
 	}
 
 	//Function that enables the user to parse the content of applicable web addresses
