@@ -5,12 +5,19 @@
   "description": "Browser Extension that parses HTML cooking pages into formatted, abridged recipes.",
   "version": "1.0",
 
-  "permissions": ["tabs", "storage", "declarativeContent"],
+  "permissions": ["activeTab", "tabs", "storage", "declarativeContent"],
   
   "browser_action": {
     "default_icon": "ParselySmall.png",
     "default_popup": "popup_test.html"
-  }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["jquery-3.4.0.js", "popup.js"]
+    }
+  ]
 }
 
   
