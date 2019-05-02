@@ -1,92 +1,75 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-	var parseButton = document.getElementById('button_parse');
+	const parseButton = document.getElementById('button_parse');
 	parseButton.classList.add('button');
-	var settingsButton = document.getElementById('settingsIcon');
+	const settingsButton = document.getElementById('settingsIcon');
 	settingsButton.classList.add("button");
-	var helpButton = document.getElementById('button_help');
+	const helpButton = document.getElementById('button_help');
 	helpButton.classList.add("button");
-	var colorButton = document.createElement("BUTTON");
-	var fontButton = document.createElement("BUTTON");
 	var plainButton = document.createElement("BUTTON");
-	var line = document.createElement("HR");
+	const line = document.createElement("HR");
+
 
 	parseButton.addEventListener('click', parse);
 	settingsButton.addEventListener('click', onSettingsClicked);
 	helpButton.addEventListener('click', onHelpClicked);
-	plainButton.addEventListener('click', plainText); 
-	
 
+	// Function that opens a new chrome tab for the readme.html to display to the user
 	function onHelpClicked (){
-
 		console.log('help button worked');
-		var help_url = "/readme.html";
+		const help_url = "/readme.html";
 		chrome.tabs.create({url: help_url});
 	}
 
-
+	// Function that adds settings to the settings button. When clicked the window is expanded to display the options
+	// to users.
 	function onSettingsClicked(){
-
 		console.log('settings button worked');
-		colorButton.innerText = "Change Color";
-		colorButton.classList.add("button");
-		fontButton.innerText = "Change Font";
-		fontButton.classList.add("button");
-		plainButton.innerText = "Plain Text Mode";
-		plainButton.classList.add("button");
+		plainButton.innerText = "Convert to Plain Text";
+		plainButton.classList.add("settingButton");
 		document.body.appendChild(line);
-		document.body.appendChild(colorButton);
-		document.body.appendChild(fontButton);
 		document.body.appendChild(plainButton);
 		settingsButton.removeEventListener('click', onSettingsClicked);
-		settingsButton.addEventListener('click', removeSettings);
+		settingsButton.addEventListener('click', removeSettings)
+
 	}
-
-
 
 	function removeSettings(){
 
-		document.body.removeChild(colorButton);
-		document.body.removeChild(fontButton);
 		document.body.removeChild(plainButton);
 		document.body.removeChild(line);
 		settingsButton.removeEventListener('click', removeSettings);
 		settingsButton.addEventListener('click', onSettingsClicked);
 	}
 
-
-
+	//Reverts the color scheme of the window to indicate that a parse is active
 	function toggleBack(){
-
 		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
 		chrome.tabs.executeScript({file: 'parse.js'});
+
 		document.getElementById('parsely').style.color = '#73a753';
-		document.body.style.backgroundColor = 'white';
+		document.body.style.backgroundColor = '#ffffff';
 		parseButton.removeEventListener('click', toggleBack);
-		plainButton.removeEventListener('click', toggleBack);
 		parseButton.addEventListener('click', parse);
-		plainButton.addEventListener('click', plainText);
+		plainButton.removeEventListener('click', toggleBack);
+		plainButton.addEventListener('click', parse);
 	}
 
-
-
+	//Function that enables the user to parse the content of applicable web addresses
 	function parse(){
-
 		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
 		chrome.tabs.executeScript({file: 'parse.js'});
-		document.getElementById('parsely').style.color = 'black';
+		document.getElementById('parsely').style.color = '#282b26';
 		document.body.style.backgroundColor = '#73a753';
 		parseButton.removeEventListener('click', parse);
 		parseButton.addEventListener('click', toggleBack);
 	}
-	
-	function plainText(){
+		function plainText(){
 		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
 		chrome.tabs.executeScript({file: 'plaintext.js'});
-		document.getElementById('parsely').style.color = 'black';
+		document.getElementById('parsely').style.color = '#282b26';
 		document.body.style.backgroundColor = '#73a753';
-		plainButton.removeEventListener('click', plainText);
+		plainButton.removeEventListener('click', plaintext);
 		plainButton.addEventListener('click', toggleBack);
 	}
-  
- });
+});
