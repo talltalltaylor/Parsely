@@ -33,22 +33,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		fontButton.innerText = "Change Font";
 		fontButton.classList.add("button");
 		plainButton.innerText = "Plain Text Mode";
-		plainButton.classList.add("button")
+		plainButton.classList.add("button");
 		document.body.appendChild(line);
 		document.body.appendChild(colorButton);
 		document.body.appendChild(fontButton);
 		document.body.appendChild(plainButton);
 		settingsButton.removeEventListener('click', onSettingsClicked);
-		settingsButton.addEventListener('click', removeSettings)
+		settingsButton.addEventListener('click', removeSettings);
 	}
 
 
 
 	function removeSettings(){
 
-		document.body.removeChild(colorButton)
-		document.body.removeChild(fontButton)
-		document.body.removeChild(plainButton)
+		document.body.removeChild(colorButton);
+		document.body.removeChild(fontButton);
+		document.body.removeChild(plainButton);
 		document.body.removeChild(line);
 		settingsButton.removeEventListener('click', removeSettings);
 		settingsButton.addEventListener('click', onSettingsClicked);
@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.getElementById('parsely').style.color = '#73a753';
 		document.body.style.backgroundColor = 'white';
 		parseButton.removeEventListener('click', toggleBack);
+		plainButton.removeEventListener('click', toggleBack);
 		parseButton.addEventListener('click', parse);
+		plainButton.addEventListener('click', plainText);
 	}
 
 
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		chrome.tabs.executeScript({file: 'plaintext.js'});
 		document.getElementById('parsely').style.color = 'black';
 		document.body.style.backgroundColor = '#73a753';
-		plainButton.removeEventListener('click', plaintext);
+		plainButton.removeEventListener('click', plainText);
 		plainButton.addEventListener('click', toggleBack);
 	}
   
