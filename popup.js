@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		plainButton.innerText = "Plain Text Mode";
 		plainButton.classList.add("button")
 		document.body.appendChild(line);
-		document.body.appendChild(colorButton);
+		//document.body.appendChild(colorButton);
 		document.body.appendChild(fontButton);
 		document.body.appendChild(plainButton);
 		settingsButton.removeEventListener('click', onSettingsClicked);
