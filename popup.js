@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.style.backgroundColor = '#ffffff';
 		parseButton.removeEventListener('click', toggleBack);
 		parseButton.addEventListener('click', parse);
+		plainButton.removeEventListener('click', toggleBack);
+		plainButton.addEventListener('click', parse);
 	}
 
 	//Function that enables the user to parse the content of applicable web addresses
@@ -62,6 +64,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.style.backgroundColor = '#73a753';
 		parseButton.removeEventListener('click', parse);
 		parseButton.addEventListener('click', toggleBack);
+	}
+		function plainText(){
+		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: 'plaintext.js'});
+		document.getElementById('parsely').style.color = '#282b26';
+		document.body.style.backgroundColor = '#73a753';
+		plainButton.removeEventListener('click', plaintext);
+		plainButton.addEventListener('click', toggleBack);
 	}
  });
 
