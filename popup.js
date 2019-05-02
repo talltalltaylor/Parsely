@@ -25,10 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function onSettingsClicked(){
 		console.log('settings button worked');
-		colorButton.innerText = "Change Color";
-		colorButton.classList.add("button")
-		fontButton.innerText = "Change Font";
-		fontButton.classList.add("button")
 		plainButton.innerText = "Plain Text Mode";
 		plainButton.classList.add("button")
 		document.body.appendChild(line);
