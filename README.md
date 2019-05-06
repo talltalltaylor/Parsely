@@ -1,17 +1,11 @@
 # Parsely
-Browser Extension that parses HTML cooking pages into formatted, abridged recipes. 
+Chrome extension to parse out recipe cards from HTML cooking pages.
 
 # Getting Started
 
-In order to install Parsely, you will need to have Google Chrome or Firefox installed. Parsely will be available in the Chrome Extenstion store and Firefox Add-ons. 
+Parsely will soon be published in the Chrome store. If you want to try it out before then, clone the repo and
+navigate to chrome://extensions, where you will 'Load Unpacked' and point it to the Demo folder.
 
 # Built With
 
 JavaScript, CSS, JQuery and HTML
-
-# Authors
-
-Philip Fitzgerald and Joseph Mancillas - Pop-up Window and icons 
-Rebecca Geng - Manifest and README file 
-Taylor - Manifest, README file, parse.js and popup.js 
-Christin Cooper - Design of Parsely button 
