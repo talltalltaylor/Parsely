@@ -6,19 +6,17 @@ document.addEventListener('DOMContentLoaded', function() {
 	settingsButton.classList.add("button");
 	const helpButton = document.getElementById('button_help');
 	helpButton.classList.add("button");
-	var plainButton = document.createElement("BUTTON");
 	const line = document.createElement("HR");
 
 
 	parseButton.addEventListener('click', parse);
 	settingsButton.addEventListener('click', onSettingsClicked);
 	helpButton.addEventListener('click', onHelpClicked);
-	plainButton.addEventListener('click', plainText);
 
 	// Function that opens a new chrome tab for the readme.html to display to the user
 	function onHelpClicked (){
 		console.log('help button worked');
-		const help_url = "/readme.html";
+		const help_url = "/Popup/readme.html";
 		chrome.tabs.create({url: help_url});
 	}
 
@@ -26,19 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	// to users.
 	function onSettingsClicked(){
 		console.log('settings button worked');
-		plainButton.innerText = "Convert to Plain Text";
-		plainButton.classList.add("settingButton");
-		document.body.appendChild(line);
-		document.body.appendChild(plainButton);
 		settingsButton.removeEventListener('click', onSettingsClicked);
 		settingsButton.addEventListener('click', removeSettings)
 
 	}
 
 	function removeSettings(){
-
-		document.body.removeChild(plainButton);
-		document.body.removeChild(line);
+		
 		settingsButton.removeEventListener('click', removeSettings);
 		settingsButton.addEventListener('click', onSettingsClicked);
 	}
@@ -62,10 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.style.backgroundColor = '#73a753';
 		parseButton.removeEventListener('click', parse);
 		parseButton.addEventListener('click', toggleBack);
-	}
-	function plainText(){
-		const plain_url = "/readmePlainText.html";
-		chrome.tabs.create({url: plain_url});
 	}
 });
 
