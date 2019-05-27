@@ -34,6 +34,10 @@ $( document ).ready(function() {
     }
     else if(list4.includes(domain)){
         parse4(recipe);
+    } 
+    else{
+        alert("This site isn't included yet! If you think that it should be," +
+        " email parsely.suggestions@gmail.com with the site you want to parse.");
     }
 
     // parse1 looks at children of divs that end with 'content'
