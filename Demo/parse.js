@@ -8,87 +8,64 @@
 $( document ).ready(function() {
     // get recipe and domain
     var recipe = $("div").find("*[class*='recipe']");
+    parent = $(recipe).parent();
     var domain = window.location.hostname;
 
     // lists of websites that will work with Parsely
     var list1 = ["thestayathomechef.com", "www.spendwithpennies.com", "www.cookingclassy.com", 
-    "belleofthekitchen.com", "www.recipetineats.com", "www.mysuburbankitchen.com", "divascancook.com"];
+    "belleofthekitchen.com", "www.recipetineats.com", "www.mysuburbankitchen.com", "divascancook.com",
+    "www.loveandlemons.com", "cookieandkate.com"];
     var list2 = ["www.averiecooks.com", "damndelicious.net"];
-    var list3 = ["www.simplyrecipes.com", "tastesbetterfromscratch.com", "www.loveandlemons.com", 
-    "minimalistbaker.com", "www.skinnytaste.com", "cafedelites.com", "shewearsmanyhats.com", 
-    "cookieandkate.com", "sugarspunrun.com", "spicysouthernkitchen.com"];
-    var list4 = ["www.gimmesomeoven.com", "www.wellplated.com"];
+    var list3 = ["www.simplyrecipes.com", "tastesbetterfromscratch.com", 
+    "minimalistbaker.com", "cafedelites.com", "shewearsmanyhats.com",
+    "sugarspunrun.com", "spicysouthernkitchen.com"];
+    var list4 = ["www.gimmesomeoven.com", "www.wellplated.com", "www.skinnytaste.com"];
 
-    // check lists for domain, then parse
+    // check lists for domain, then parse based on closest element matching correct parent
     if (list1.includes(domain)){
-        parse1(recipe);
+        closest = recipe.closest("div[class$='content']");
+        parse(closest, recipe);
+        $("img[class*='wp-image' i]").toggle();
     }
     else if(list2.includes(domain)){
-        parse2(recipe);
+        closest = recipe.closest("article[class$='content']");
+        parse(closest, recipe);
         if(domain.indexOf("averie") > -1){
             pAndH2();
         }
     }
     else if(list3.includes(domain)){
-        parse3(recipe);
+        closest = recipe.closest("div[class*='content']");
+        parse(parent, recipe);
+        $("img[class*='wp-image' i]").toggle();
+        $("div[class$='description']").toggle();
     }
     else if(list4.includes(domain)){
-        parse4(recipe);
+        closest = recipe.closest("div[class*='single']");
+        parse(closest, recipe);
+    }
+    else if(domain.indexOf("inspiredtaste") > -1){
+        $(parent).children().not("div[class*='itr']").toggle();
     } 
     else{
         alert("This site isn't included yet! If you think that it should be," +
         " email parsely.suggestions@gmail.com with the site you want to parse.");
     }
 
-    // parse1 looks at children of divs that end with 'content'
-    function parse1(recipe){
-        $("div[class$='content']").children().not(recipe).toggle();
-        $("style").hide();
-        $("script").hide();
-        $("div[class*='adthrive' i]").toggle();
-        $("img[class*='wp-image' i]").toggle();
-        $("div[class*='hidden']").toggle();
-        $(".tlod").toggle();
-        $(".widget-wrap").toggle();
-        $("div[class*='comment']").toggle();   
-    }
-    // parse2 looks at children of articles that end with 'content'
-    function parse2(recipe){
-        $("article[class$='content']").children().not(recipe).toggle();
+    // parse looks at children of closest parent to recipe element,
+    // toggles everything but recipe, but also misc elements that stick out
+    // on the page
+    function parse(closest,recipe){
+        closest.children().not(recipe).toggle();
         $("style").hide();
         $("script").hide();
         $("div[class*='adthrive' i]").toggle();
         $("div[class*='hidden']").toggle();
-        $(".tlod").toggle();
-        $(".widget-wrap").toggle();
+        $("*[class*='tlod'").toggle();
+        $("*[class*='widget'").toggle();
         $("div[class*='comment']").toggle();   
     }
-    // parse3 looks at children of divs that end with 'entry-content'
-    function parse3(recipe){
-        $("div[class$='entry-content']").children().not(recipe).toggle();
-        $("div[class$='description']").toggle();
-        $("style").hide();
-        $("script").hide();
-        $("div[class*='adthrive' i]").toggle();
-        $("img[class*='wp-image' i]").toggle();
-        $("div[class*='hidden']").toggle();
-        $(".tlod").toggle();
-        $(".widget-wrap").toggle();
-        $("div[class*='comment']").toggle();   
-    }
-    // parse4 looks at children of divs that contain 'singlepost'
-    function parse4(recipe){
-        $("div[class*='singlepost']").children().not(recipe).toggle();
-        $("div[class$='description']").toggle();
-        $("style").hide();
-        $("script").hide();
-        $("div[class*='adthrive' i]").toggle();
-        $("img[class*='wp-image' i]").toggle();
-        $("div[class*='hidden']").toggle();
-        $(".tlod").toggle();
-        $(".widget-wrap").toggle();
-        $("div[class*='comment']").toggle();   
-    }
+    
     // function to hide p and h2 elements
     // was using this often, but ended up using it less and less
     // as the code improved. Now it's only for one site
