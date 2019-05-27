@@ -5,10 +5,11 @@
 // recipe is stored before looking at which website and passed to specific parse
 
 $( document ).ready(function() {
-    // get recipe and domain
+    // get recipe, parent, domain
     var recipe = $("div").find("*[class*='recipe']");
-    parent = $(recipe).parent();
+    var parent = $(recipe).parent();
     var domain = window.location.hostname;
+    var closest;
 
     // lists of websites that will work with Parsely
     var list1 = ["thestayathomechef.com", "www.spendwithpennies.com", "www.cookingclassy.com", 
@@ -34,7 +35,6 @@ $( document ).ready(function() {
         }
     }
     else if(list3.includes(domain)){
-        closest = recipe.closest("div[class*='content']");
         parse(parent, recipe);
         $("img[class*='wp-image' i]").toggle();
         $("div[class$='description']").toggle();
@@ -43,6 +43,7 @@ $( document ).ready(function() {
         closest = recipe.closest("div[class*='single']");
         parse(closest, recipe);
     }
+    // this one is special
     else if(domain.indexOf("inspiredtaste") > -1){
         $(parent).children().not("div[class*='itr']").toggle();
     } 
