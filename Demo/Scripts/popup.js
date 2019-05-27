@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	//Reverts the color scheme of the window to indicate that a parse is active
 	function toggleBack(){
-		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
-		chrome.tabs.executeScript({file: 'parse.js'});
+		chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: '/Scripts/parse.js'});
 
 		document.getElementById('parsely').style.color = '#73a753';
 		document.body.style.backgroundColor = '#ffffff';
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	//Function that enables the user to parse the content of applicable web addresses
 	function parse(){
-		chrome.tabs.executeScript({file: 'jquery-3.4.0.slim.js'});
-		chrome.tabs.executeScript({file: 'parse.js'});
+		chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: '/Scripts/parse.js'});
 		document.getElementById('parsely').style.color = '#282b26';
 		document.body.style.backgroundColor = '#73a753';
 		parseButton.removeEventListener('click', parse);
