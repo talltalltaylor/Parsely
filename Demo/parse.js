@@ -1,9 +1,8 @@
 //Author: Taylor Robbins
 //
 // 4 different parse functions, each one tailored to a specific DOM structure
-// multi-way branch based on website, such that parse cannot be initiated on the wrong sites
+// multi-way branch based on domain, such that parse cannot be initiated on the wrong sites
 // recipe is stored before looking at which website and passed to specific parse
-// used jquery selectors instead of literal class names
 
 $( document ).ready(function() {
     // get recipe and domain
