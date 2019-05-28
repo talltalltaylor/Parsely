@@ -7,8 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	const helpButton = document.getElementById('button_help');
 	helpButton.classList.add("button");
 	const line = document.createElement("HR");
-
-
+	const newTab = document.createElement("input");
+	newTab.type = "checkbox";
+	newTab.id = "newTab";
+	var label = document.createElement('label');
+	label.htmlFor = "newTab";
+	label.appendChild(document.createTextNode('Open Recipe in New Tab'));
 	parseButton.addEventListener('click', parse);
 	settingsButton.addEventListener('click', onSettingsClicked);
 	helpButton.addEventListener('click', onHelpClicked);
@@ -24,13 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
 	// to users.
 	function onSettingsClicked(){
 		console.log('settings button worked');
+		document.body.appendChild(newTab);
+		document.body.appendChild(label);
+		
 		settingsButton.removeEventListener('click', onSettingsClicked);
 		settingsButton.addEventListener('click', removeSettings)
 
 	}
 
 	function removeSettings(){
-		
+
+		document.body.removeChild(newTab);
+		document.body.removeChild(label);
 		settingsButton.removeEventListener('click', removeSettings);
 		settingsButton.addEventListener('click', onSettingsClicked);
 	}

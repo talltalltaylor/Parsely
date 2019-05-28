@@ -11,7 +11,7 @@ $( document ).ready(function() {
     var domain = window.location.hostname;
     var closest;
 
-    // lists of websites that will work with Parsely
+    // lists of websites that will work with Parsely, split up based on DOM structure/labels
     var list1 = ["thestayathomechef.com", "www.spendwithpennies.com", "www.cookingclassy.com", 
     "belleofthekitchen.com", "www.recipetineats.com", "www.mysuburbankitchen.com", "divascancook.com",
     "www.loveandlemons.com", "cookieandkate.com"];
