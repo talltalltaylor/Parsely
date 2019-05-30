@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 	const parseButton = document.getElementById('button_parse');
-	parseButton.classList.add('button');
+	parseButton.classList.add("button");
 	const settingsButton = document.getElementById('settingsIcon');
 	settingsButton.classList.add("button");
 	const helpButton = document.getElementById('button_help');
@@ -12,10 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	newTab.id = "newTab";
 	var label = document.createElement('label');
 	label.htmlFor = "newTab";
-	label.appendChild(document.createTextNode('Open Recipe in New Tab'));
+	label.appendChild(document.createTextNode('open new tab with no css'));
 	parseButton.addEventListener('click', parse);
 	settingsButton.addEventListener('click', onSettingsClicked);
 	helpButton.addEventListener('click', onHelpClicked);
+	var parseFlag = false;
 
 	// Function that opens a new chrome tab for the readme.html to display to the user
 	function onHelpClicked (){
@@ -46,23 +47,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	//Reverts the color scheme of the window to indicate that a parse is active
 	function toggleBack(){
-		chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
-		chrome.tabs.executeScript({file: '/Scripts/parse.js'});
+		parseFlag = false;
 
-		document.getElementById('parsely').style.color = '#73a753';
-		document.body.style.backgroundColor = '#ffffff';
-		parseButton.removeEventListener('click', toggleBack);
-		parseButton.addEventListener('click', parse);
+		if(newTab.checked == false){
+			chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
+			chrome.tabs.executeScript({file: '/Scripts/parse.js'});
+			changeColor(parseFlag);
+		}
+		else {
+			chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
+			chrome.tabs.executeScript({file: '/Scripts/parse-tab.js'});
+			changeColor(parseFlag);
+		}
+		
 	}
 
 	//Function that enables the user to parse the content of applicable web addresses
 	function parse(){
-		chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
-		chrome.tabs.executeScript({file: '/Scripts/parse.js'});
-		document.getElementById('parsely').style.color = '#282b26';
-		document.body.style.backgroundColor = '#73a753';
-		parseButton.removeEventListener('click', parse);
-		parseButton.addEventListener('click', toggleBack);
+		parseFlag = true;
+		if(newTab.checked == false){
+			chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
+			chrome.tabs.executeScript({file: '/Scripts/parse.js'});
+			changeColor(parseFlag);
+		}
+		else {
+			chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
+			chrome.tabs.executeScript({file: '/Scripts/parse-tab.js'});
+			changeColor(parseFlag);
+		}
+		
+	}
+
+	function changeColor(flag){
+		if(flag == true){
+			document.getElementById('parsely').style.color = '#282b26';
+			document.body.style.backgroundColor = '#73a753';
+			parseButton.removeEventListener('click', parse);
+			parseButton.addEventListener('click', toggleBack);
+		}
+		else{
+			document.getElementById('parsely').style.color = '#73a753';
+			document.body.style.backgroundColor = '#ffffff';
+			parseButton.removeEventListener('click', toggleBack);
+			parseButton.addEventListener('click', parse);
+		}
 	}
 });
 

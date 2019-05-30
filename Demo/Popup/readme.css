@@ -1,9 +1,19 @@
 body {
-  background-color: #73a753;
+  background-color: white;
 }
 
 h1 {
-  color: white;
+  color: #73a753;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  color: #73a753;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  color: #73a753;
   font-family: 'Roboto', sans-serif;
 }
 div {
@@ -11,18 +21,18 @@ div {
 }
 
 p1 {
-  color: white;
+  color: black;
   font-family: 'Roboto', sans-serif;
 }
 p3 {
-  color: white;
+  color: black;
   font-family: 'Roboto', sans-serif;
 }
 ul {
-  color: white;
+  color: black;
   font-family: 'Roboto', sans-serif;
 }
 li {
-  color: white;
+  color: black;
   font-family: 'Roboto', sans-serif;
 }

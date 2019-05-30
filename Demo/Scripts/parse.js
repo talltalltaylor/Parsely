@@ -13,12 +13,23 @@ $( document ).ready(function() {
 
     // lists of websites that will work with Parsely, split up based on DOM structure/labels
     var list1 = ["thestayathomechef.com", "www.spendwithpennies.com", "www.cookingclassy.com", 
-    "belleofthekitchen.com", "www.recipetineats.com", "www.mysuburbankitchen.com", "divascancook.com",
-    "www.loveandlemons.com", "cookieandkate.com"];
+    "belleofthekitchen.com", "www.recipetineats.com", "www.mysuburbankitchen.com", 
+    "divascancook.com", "www.loveandlemons.com", "cookieandkate.com", 
+    "www.feastingathome.com", "www.jessicagavin.com", "iwashyoudry.com", 
+    "sweetandsavorymeals.com", "www.tasteandtellblog.com", "www.lifeasastrawberry.com",
+    "sallysbakingaddiction.com"];
     var list2 = ["www.averiecooks.com", "damndelicious.net"];
     var list3 = ["www.simplyrecipes.com", "tastesbetterfromscratch.com", 
     "minimalistbaker.com", "cafedelites.com", "shewearsmanyhats.com",
-    "sugarspunrun.com", "spicysouthernkitchen.com"];
+    "sugarspunrun.com", "spicysouthernkitchen.com", "www.dinneratthezoo.com", 
+    "therecipecritic.com","thesaltymarshmallow.com", "livelytable.com", 
+    "www.yellowblissroad.com", "www.jocooks.com", "www.primaverakitchen.com",
+    "kristineskitchenblog.com", "www.apinchofhealthy.com", "www.twopeasandtheirpod.com",
+    "www.lecremedelacrumb.com", "www.thechunkychef.com", "www.willcookforsmiles.com",
+    "www.theseasonedmom.com", "natashaskitchen.com", "laurenslatest.com",
+    "www.tastesoflizzyt.com", "addapinch.com", "keviniscooking.com",
+    "www.recipegirl.com", "www.asweetpeachef.com", "www.foodiecrush.com",
+    "www.lifeasastrawberry.com"];
     var list4 = ["www.gimmesomeoven.com", "www.wellplated.com", "www.skinnytaste.com"];
 
     // check lists for domain, then parse based on closest element matching correct parent
@@ -26,6 +37,11 @@ $( document ).ready(function() {
         closest = recipe.closest("div[class$='content']");
         parse(closest, recipe);
         $("img[class*='wp-image' i]").toggle();
+        if(domain.indexOf("tasteandtellblog") > -1){
+            pAndH2();
+            $("em").toggle();
+        }
+        
     }
     else if(list2.includes(domain)){
         closest = recipe.closest("article[class$='content']");
