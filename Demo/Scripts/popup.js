@@ -19,34 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
 	//Reverts the color scheme of the window to indicate that a parse is active
 	function toggleBack(){
 		parseFlag = false;
-
-		if(newTab.checked == false){
-			chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
-			chrome.tabs.executeScript({file: '/Scripts/parse.js'});
-			changeColor(parseFlag);
-		}
-		else {
-			chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
-			chrome.tabs.executeScript({file: '/Scripts/parse-tab.js'});
-			changeColor(parseFlag);
-		}
+		chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: '/Scripts/parse.js'});
+		changeColor(parseFlag);
 		
 	}
 
 	//Function that enables the user to parse the content of applicable web addresses
 	function parse(){
 		parseFlag = true;
-		if(newTab.checked == false){
-			chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
-			chrome.tabs.executeScript({file: '/Scripts/parse.js'});
-			changeColor(parseFlag);
-		}
-		else {
-			chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
-			chrome.tabs.executeScript({file: '/Scripts/parse-tab.js'});
-			changeColor(parseFlag);
-		}
-		
+		chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
+		chrome.tabs.executeScript({file: '/Scripts/parse.js'});
+		changeColor(parseFlag);
 	}
 
 	function changeColor(flag){
