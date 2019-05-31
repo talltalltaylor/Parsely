@@ -12,11 +12,6 @@
     "default_popup": "Popup/popup_test.html"
   },
 
-  "background": {
-    "scripts": ["Scripts/background.js"],
-    "persistent": false
-  },
-
   "content_scripts": [
     {
       "matches": ["http://*/*","https://*/*"],
