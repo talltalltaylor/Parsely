@@ -2,14 +2,14 @@
   "manifest_version": 2,
 
   "name": "Parsely",
-  "description": "Browser Extension that parses HTML cooking pages into formatted, abridged recipes.",
-  "version": "1.0",
+  "description": "Browser Extension that parses out recipe cards from food blogs.",
+  "version": "0.0",
 
   "permissions": ["activeTab", "tabs"],
   
   "browser_action": {
     "default_icon": "logos/ParselySmall.png",
-    "default_popup": "Popup/popup_test.html"
+    "default_popup": "Popup/popup.html"
   },
 
   "content_scripts": [

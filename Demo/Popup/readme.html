@@ -6,42 +6,102 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-    <h1> Parsely </h1> 
-    <p1>Browser Extension that parses HTML cooking pages into formatted, abridged recipes.</p1>
-    <p3>Usage: </p3>
-    <ul>
-      <li>Click the Parsely logo in the browser to open the menu.</li>
-      <img src="/icons/openParsely.png"style="width:500px;height:300px;">
-      <li>The background of Parsely is intitially white. When you click the button to parse or un-parse, the background will change color. </li>
-      <img src="/icons/clickParse.png" style="width:500px;height:300px;">
-      <li>The Parsely extension is currently working on the following websites:</li> 
-      <ul>
-        <!--todo: add links for all websites-->
-       <li><a href="https://www.averiecooks.com/">averiecooks.com</a></li>
-       <li><a href="https://belleofthekitchen.com/">belleofthekitchen.com</a></li>
-       <li>cafedelites.com</li>
-       <li>cookieandkate.com</li>
-       <li>cookingclassy.com</li>
-       <li>damndelicious.net</li>
-       <li>divascancook.com</li>
-       <li>gimmesomeoven.com</li>
-       <li>loveandlemons.com</li>
-       <li>minimalistbaker.com</li>
-       <li>mysuburbankitchen.com</li>
-       <li>recipetineats.com</li>
-       <li>shewearsmanyhats.com</li>
-       <li>simplyrecipes.com</li>
-       <li>skinnytaste.com</li>
-       <li>spendwithpennies.com</li>
-       <li>spicysouthernkitchen.com</li>
-       <li>sugarspunrun.com</li>
-       <li>tastesbetterfromscratch.com</li>
-       <li>thestayathomechef.com </li>
-       <li>wellplated.com</li> 
-      </ul> 
-      <li>Clicking the settings icon will open the optional settings. Click it again to close settings.</li>
-      <li>Clicking the help button will open this page in a seperate tab.</li>
-      <li>To close Parsely, click the extension icon in the browser.</li>
-    </ul>
+    <h1 id="title"> Parsely </h1> 
+    <p1 id="description">Browser Extension that parses HTML cooking pages into formatted, abridged recipes.</p1>
+    <p3 id="usage"><br><br>Usage: </p3>
+    <div id="list_container">
+      <ul id="walkthrough">
+        <li>Click the Parsely logo in the browser to open the menu.</li>
+        <img src="/icons/parselyOpen.png"style="width:500px;height:300px;">
+        <li>The background of Parsely is intitially white. When you click the button to parse or un-parse, the background will change color. </li>
+        <img src="/icons/parselyClick.png" style="width:500px;height:300px;">
+        <li>The Parsely extension is currently working on the following websites:</li> 
+        <ul id="list1">
+          <li><a href="https://www.acouplecooks.com/" target="_blank">acouplecooks.com</a></li>
+          <li><a href="https://addapinch.com/" target="_blank">addapinch.com</a></li>
+          <li><a href="https://www.africanbites.com/" target="_blank">africanbites.com</a></li>
+          <li><a href="https://www.apinchofhealthy.com/" target="_blank">apinchofhealthy.com</a></li>
+          <li><a href="https://www.aspicyperspective.com/" target="_blank">aspicyperspective.com</a></li>
+          <li><a href="https://www.asweetpeachef.com/" target="_blank">asweetpeachef.com</a></li>
+          <li><a href="https://www.averiecooks.com/" target="_blank">averiecooks.com</a></li>
+          <li><a href="https://belleofthekitchen.com/" target="_blank">belleofthekitchen.com</a></li>
+          <li><a href="https://www.budgetbytes.com/" target="_blank">budgetbytes.com</a></li>
+          <li><a href="https://cafedelites.com/" target="_blank">cafedelites.com</a></li>
+          <li><a href="https://www.chelseasmessyapron.com/" target="_blank">chelseasmessyapron.com</a></li>
+          <li><a href="https://cookieandkate.com/" target="_blank">cookieandkate.com<a></li>
+          <li><a href="https://www.cookingclassy.com/" target="_blank">cookingclassy.com</a></li>
+          <li><a href="https://www.crunchycreamysweet.com/" target="_blank">crunchycreamysweet.com</a></li>
+          <li><a href="https://damndelicious.net/" target="_blank">damndelicious.net</a></li>
+          <li><a href="https://dearcrissy.com/" target="_blank">dearcrissy.com</a></li>
+          <li><a href="https://diethood.com/" target="_blank">diethood.com</a></li>
+          <li><a href="https://www.dinneratthezoo.com/" target="_blank">dinneratthezoo.com</a></li>
+          <li><a href="https://divascancook.com/" target="_blank">divascancook.com</a></li>
+          <li><a href="https://www.eatyourselfskinny.com/" target="_blank">eatyourselfskinny.com</a></li>
+          <li><a href="https://www.evolvingtable.com/" target="_blank">evolvingtable.com</a></li>
+          <li><a href="https://www.feastingathome.com" target="_blank"></a>feastingathome.com</li>
+          <li><a href="https://www.fitfoodiefinds.com" target="_blank"></a>fitfoodiefinds.com</li>
+          <li><a href="https://www.foodiecrush.com" target="_blank"></a>foodiecrush.com</li>
+          <li><a href="https://www.galonamission.com" target="_blank"></a>galonamission.com</li> 
+          <li><a href="https://www.gimmesomeoven.com/" target="_blank">gimmesomeoven.com</a></li>
+          <li><a href="https://www.iheartnaptime.net/" target="_blank">iheartnaptime.net</a></li>
+          <li><a href="https://ifoodreal.com/" target="_blank">ifoodreal.com</a></li>
+          <li><a href="https://iwashyoudry.com/" target="_blank">iwashyoudry.com</a></li>
+          <li><a href="https://www.jessicagavin.com" target="_blank"></a>jessicagavin.com</li>
+          <li><a href="https://www.jocooks.com" target="_blank"></a>jocooks.com</li>
+          <li><a href="https://keviniscooking.com" target="_blank"></a>keviniscooking.com</li>
+          <li><a href="https://kristineskitchenblog.com" target="_blank"></a>kristineskitchenblog.com</li>
+          <li><a href="https://laurenslatest.com" target="_blank"></a>laurenslatest.com</li>
+          <li><a href="https://www.lecremedelacrumb.com" target="_blank"></a>lecremedelacrumb.com</li>
+          <li><a href="www.lemontreedwelling.com" target="_blank"></a>lemontreedwelling.com</li>
+          <li><a href="https://www.lifeasastrawberry.com/" target="_blank">lifeasastrawberry.com</a></li>
+          <li><a href="https://life-in-the-lofthouse.com/" target="_blank">life-in-the-lofthouse.com</a></li>
+          <li><a href="https://www.littlebroken.com/" target="_blank">littlebroken.com</a></li>
+          <li><a href="https://livelytable.com/" target="_blank">livelytable.com</a></li>       
+        </ul>
+        <ul id="list2">
+          <li><a href="https://lilluna.com/" target="_blank">lilluna.com</a></li>
+          <li><a href="https://www.loveandlemons.com/" target="_blank">loveandlemons.com</a></li>
+          <li><a href="https://minimalistbaker.com/" target="_blank">minimalistbaker.com</a></li>
+          <li><a href="https://www.melskitchencafe.com/" target="_blank">melskitchencafe.com</a></li>
+          <li><a href="https://www.mysuburbankitchen.com/" target="_blank">mysuburbankitchen.com</a></li>
+          <li><a href="https://natashaskitchen.com/" target="_blank">natashaskitchen.com</a></li>
+          <li><a href="https://www.onceuponachef.com/" target="_blank">onceuponachef.com</a></li>
+          <li><a href="https://www.primaverakitchen.com/" target="_blank">primaverakitchen.com</a></li>
+          <li><a href="https://www.recipegirl.com/" target="_blank">recipegirl.com</a></li>
+          <li><a href="https://reciperunner.com/" target="_blank">reciperunner.com</a></li>
+          <li><a href="https://www.recipetineats.com/" target="_blank">recipetineats.com</a></li>
+          <li><a href="https://sallysbakingaddiction.com/" target="_blank">sallysbakingaddiction.com</a></li>
+          <li><a href="https://www.shelikesfood.com/" target="_blank">shelikesfood.com</a></li>
+          <li><a href="https://shewearsmanyhats.com/" target="_blank">shewearsmanyhats.com</a></li>
+          <li><a href="https://www.simplyrecipes.com/" target="_blank">simplyrecipes.com</a></li>
+          <li><a href="https://www.skinnytaste.com/" target="_blank">skinnytaste.com</a></li>
+          <li><a href="https://www.spendwithpennies.com/" target="_blank">spendwithpennies.com</a></li>
+          <li><a href="https://spicysouthernkitchen.com/" target="_blank">spicysouthernkitchen.com</a></li>
+          <li><a href="https://sugarspunrun.com/" target="_blank">sugarspunrun.com</a></li>
+          <li><a href="https://sweetandsavorymeals.com/" target="_blank">sweetandsavorymeals.com</a></li>
+          <li><a href="https://www.tasteandtellblog.com/" target="_blank">tasteandtellblog.com</a></li>
+          <li><a href="https://tastesbetterfromscratch.com/" target="_blank">tastesbetterfromscratch.com</a></li>
+          <li><a href="https://www.tastesoflizzyt.com/" target="_blank">tastesoflizzyt.com</a></li>
+          <li><a href="https://temeculablogs.com/" target="_blank">temeculablogs.com</a></li>
+          <li><a href="https://www.thechunkychef.com/" target="_blank">thechunkychef.com</a></li>
+          <li><a href="https://thecookingjar.com/" target="_blank">thecookingjar.com</a></li>
+          <li><a href="https://thecozycook.com/" target="_blank">thecozycook.com</a></li>
+          <li><a href="https://www.theflavorbender.com/" target="_blank">theflavorbender.com</a></li>
+          <li><a href="https://www.the-girl-who-ate-everything.com/" target="_blank">the-girl-who-ate-everything.com</a></li>
+          <li><a href="https://thegoldlininggirl.com/" target="_blank">thegoldlininggirl.com</a></li>
+          <li><a href="https://therecipecritic.com/" target="_blank">therecipecritic.com</a></li>
+          <li><a href="https://thesaltymarshmallow.com/" target="_blank">thesaltymarshmallow.com</a></li>
+          <li><a href="https://www.theseasonedmom.com/" target="_blank">theseasonedmom.com</a></li>
+          <li><a href="https://thestayathomechef.com/" target="_blank">thestayathomechef.com</a></li>
+          <li><a href="https://togetherasfamily.com/" target="_blank">togetherasfamily.com</a></li>
+          <li><a href="https://www.twopeasandtheirpod.com/" target="_blank">twopeasandtheirpod.com</a></li>
+          <li><a href="https://www.wellplated.com/" target="_blank">wellplated.com</a></li>
+          <li><a href="https://www.willcookforsmiles.com/" target="_blank">willcookforsmiles.com</a></li>
+          <li><a href="https://www.wineandglue.com/" target="_blank">wineandglue.com</a></li>
+          <li><a href="https://www.yellowblissroad.com/" target="_blank">yellowblissroad.com</a></li> 
+        </ul>  
+        <li>To close Parsely, click the extension icon in the browser, or anywhere outside the popup.</li>
+      </ul>
+    </div>
   </body>
 </html>

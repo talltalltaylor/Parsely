@@ -1,20 +1,23 @@
 body {
-  background-color: white;
+  background-color: #73a753;
 }
 
 h1 {
-  color: #73a753;
+  color: black;
   font-family: 'Roboto', sans-serif;
+  text-shadow: .3px .3px white;
 }
 
 h2 {
-  color: #73a753;
+  color: black;
   font-family: 'Roboto', sans-serif;
+  text-shadow: .3px .3px white
 }
 
 h3 {
-  color: #73a753;
+  color: black;
   font-family: 'Roboto', sans-serif;
+  text-shadow: .3px .3px white
 }
 div {
 	margin: 20px 0;
@@ -23,16 +26,44 @@ div {
 p1 {
   color: black;
   font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-shadow: .3px .3px white
 }
 p3 {
   color: black;
   font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-shadow: .3px .3px white
 }
+
+a {
+  color: black;
+  text-decoration: none;
+  text-shadow: .3px .3px white
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+  text-shadow: .3px .3px white
+}
+
+a:hover {
+  color: maroon;
+  text-decoration: none;
+}
+
 ul {
   color: black;
   font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
 }
-li {
+ul li {
   color: black;
   font-family: 'Roboto', sans-serif;
+  margin: 5px;
+  font-size: 20px;
+  text-shadow: .3px .3px white
 }
