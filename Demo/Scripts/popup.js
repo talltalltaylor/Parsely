@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	//undo parse
 	function toggleBack() {
 		parseFlag = false;
-		chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
-		chrome.tabs.executeScript({file: '/Scripts/parse.js'});
+		chrome.runtime.sendMessage({from: "pop", subject: "parse"});
 		changeColor(parseFlag);
 		
 	}
@@ -35,8 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	//Function that enables the user to parse the content of applicable web addresses
 	function parse() {
 		parseFlag = true;
-		chrome.tabs.executeScript({file: '/Scripts/jquery-3.4.0.slim.js'});
-		chrome.tabs.executeScript({file: '/Scripts/parse.js'});
+		chrome.runtime.sendMessage({from: "pop", subject: "parse"});
 		changeColor(parseFlag);
 	}
 	//change color back and forth everytime parse button is clicked 
