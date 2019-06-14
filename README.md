@@ -1,10 +1,9 @@
 # Parsely
-Chrome extension to parse out recipe cards from HTML cooking pages/food blogs.
+Chrome extension to parse out recipe cards from HTML cooking pages/food blogs. Works with over 75 recipe websites currently.
 
 # Getting Started
 
-Parsely will soon be published in the Chrome store. If you want to try it out before then, clone the repo and
-navigate to chrome://extensions, where you will 'Load Unpacked' and point it to the Demo folder.
+Parsely is currently in Beta testing! I plan on releasing it publicly on the chrome store on August 1st, 2019. If you don't want to wait, you can email parsely.suggestions@gmail.com for a link to the beta. 
 
 # Usage
 
@@ -21,4 +20,4 @@ Click the question mark to open our readme and see the list of sites Parsely wor
 
 # Built With
 
-JavaScript, CSS, JQuery and HTML
+JavaScript, JQuery, CSS and HTML
