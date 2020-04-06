@@ -3,7 +3,7 @@
 
   "name": "Parsely",
   "description": "Browser Extension that parses out recipe cards from food blogs.",
-  "version": "1.0",
+  "version": "1.1",
 
   "permissions": ["activeTab"],
   
